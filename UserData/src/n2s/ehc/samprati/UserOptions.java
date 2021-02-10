@@ -26,8 +26,8 @@ public class UserOptions {
 	
 	public void valid_name(Scanner scan) {
 		System.out.printf("\n Enter Name: ");		
-    	v_name=ub.setUserName(scan.next());
-    	if (!v_name.matches("^[a-zA-Z\\s]+")) {
+    		v_name=ub.setUserName(scan.next());
+    		if (!v_name.matches("^[a-zA-Z\\s]+")) {
 		    System.out.println("\n Invalid name");
 		    valid_name(scan);
 		}
@@ -36,62 +36,62 @@ public class UserOptions {
 	public void insert_op(Scanner scan) {
 		System.out.println("\n Wish to insert more(y/n): ");
 		char op1=scan.next().charAt(0);
-        if(op1=='y'||op1=='Y')
-        {
-        	insert(scan);
-        }
-        else if(op1=='n'||op1=='N'){
-        	i_flag=false;
-        	u_flag=true;
-        	d_flag=true;
-        }
-        else {
-        	System.out.println("Incorrect input");
-        	insert_op(scan);
-        }
+        	if(op1=='y'||op1=='Y')
+        	{
+        		insert(scan);
+        	}
+        	else if(op1=='n'||op1=='N'){
+        		i_flag=false;
+        		u_flag=true;
+        		d_flag=true;
+        	}
+        	else {
+        		System.out.println("Incorrect input");
+        		insert_op(scan);
+        	}
 	}
 	
 	public void update_op(Scanner scan) {
 		System.out.println("\n Wish to update more(y/n): ");
 		char op1=scan.next().charAt(0);
-        if(op1=='y'||op1=='Y')
-        {
-        	update(scan);
-        }
-        else if(op1=='n'||op1=='N'){
-        	i_flag=true;
-        	u_flag=false;
-        	d_flag=true;
-        }
-        else {
-        	System.out.println("Incorrect input");
-        	update_op(scan);
-        }
+        	if(op1=='y'||op1=='Y')
+        	{
+        		update(scan);
+        	}
+        	else if(op1=='n'||op1=='N'){
+        		i_flag=true;
+        		u_flag=false;
+        		d_flag=true;
+        	}
+       		else {
+        		System.out.println("Incorrect input");
+        		update_op(scan);
+        	}
 	}
 	
 	public void delete_op(Scanner scan) {
 		System.out.println("\n Wish to delete more(y/n): ");
 		char op1=scan.next().charAt(0);
-        if(op1=='y'||op1=='Y')
-        {
-        	delete(scan);
-        }
-        else if(op1=='n'||op1=='N'){		       
-        	i_flag=true;
-        	u_flag=true;
-        	d_flag=false;
-        }
-        else {
-        	System.out.println("Incorrect input");
-        	delete_op(scan);
-        }
+        	if(op1=='y'||op1=='Y')
+        	{
+        		delete(scan);
+        	}
+        	else if(op1=='n'||op1=='N'){		       
+        		i_flag=true;
+        		u_flag=true;
+        		d_flag=false;
+        	}
+        	else {
+        		System.out.println("Incorrect input");
+        		delete_op(scan);
+        	}
 	}
 	
 	public void insert(Scanner scan) {
 		while(i_flag) {	
 	    	System.out.println("\n Insert \n------------------");
 	    	try {	    		
-	    		valid_id(scan);	    		
+	    	    valid_id(scan);	    		
 	            if(ue.validateId(ht.containsKey(op))) {
 	            	i_flag=false;
 	            }
@@ -100,7 +100,7 @@ public class UserOptions {
 	            System.out.printf("\n Your Insert Success !!");
 	            insert_op(scan);
 	    	}catch(InvalidUserId ui) {
-				System.out.println(ui.toString());
+			System.out.println(ui.toString());
 			}
 		}
 	}
@@ -109,7 +109,7 @@ public class UserOptions {
 		while(u_flag) {
 	    	System.out.println("\n Update \n------------------");
 	    	try {
-	    		valid_id(scan);
+	    	    valid_id(scan);
 	            if(ue.idUnavailable(!ht.containsKey(op))) {
 	            	u_flag=false;
 	            }
@@ -127,7 +127,7 @@ public class UserOptions {
 		while(d_flag) {
 	    	System.out.println("\n Delete \n------------------");
 	    	try {
-	    		valid_id(scan);
+	    	    valid_id(scan);
 	            if(ue.idUnavailable(!ht.containsKey(op))) {
 	            	d_flag=false;
 	            }	
@@ -149,13 +149,13 @@ public class UserOptions {
 			 System.out.println(count+"\t"+i.getKey()+"\t"+ i.getValue());
 			 count++;
 		}
-    	count++;		
+    	        count++;		
 	}
 	
 	public void exit() {
 		System.out.println("**********Exit************");
-    	System.out.println("\n Ending the flow. Thank you !"); 
-    	System.out.println("***************************");
+		System.out.println("\n Ending the flow. Thank you !"); 
+		System.out.println("***************************");
 	}
 }
 	
