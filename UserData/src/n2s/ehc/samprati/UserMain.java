@@ -14,14 +14,14 @@ public class UserMain{
 	public static void main(String[] args) throws Exception{
 		// TODO Auto-generated method stub
 		while(in_flag)
-			try {
+		    try {
 			do
 			{	
-				System.out.println("\n Choose the option below");
-				System.out.println("-------------------------------");
-				System.out.println("\n 1: Insert \n 2: Update \n 3: Delete \n 4: View \n 5: Exit \n");  
-				System.out.println("Enter your option:");
-				ch=ub.setOptionValue(scan.nextInt());
+			    System.out.println("\n Choose the option below");
+			    System.out.println("-------------------------------");
+			    System.out.println("\n 1: Insert \n 2: Update \n 3: Delete \n 4: View \n 5: Exit \n");
+		            System.out.println("Enter your option:");
+			    ch=ub.setOptionValue(scan.nextInt());
 			    if(ue.validateOption(ch)) {
 			    	in_flag=false;
 			    }
@@ -34,8 +34,8 @@ public class UserMain{
 			        	uo.update(scan);
 			        	break;
 			        case 3:  
-			            uo.delete(scan);
-			            break;
+			            	uo.delete(scan);
+			            	break;
 			        case 4:
 			        	uo.view();
 			        	break;
@@ -45,12 +45,12 @@ public class UserMain{
 			        	System.exit(0);
 			        	break;
 			     }
-	        }while(ch!=5);  
+	        	}while(ch!=5);  
 		}catch(InvalidEntry e) {
 			System.out.println(e.toString());
 		}catch (InputMismatchException ie) {
-            System.out.println(ie.toString());
-            scan.nextLine();
-        }
+            		System.out.println(ie.toString());
+            		scan.nextLine();
+        	}
 	}
 }
